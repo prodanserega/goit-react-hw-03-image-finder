@@ -1,0 +1,12 @@
+App {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding-bottom: 24px;
+}
+.Error {
+  margin: 0 auto;
+  font-size: large;
+  font-weight: 700;
+  color: green;
+}
