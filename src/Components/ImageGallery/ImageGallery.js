@@ -3,7 +3,7 @@ import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
 
 import s from "./ImageGallery.module.css";
 
-const imageGallery = ({ images, modalImage }) => {
+const ImageGallery = ({ images, modalImage }) => {
   return (
     <ul className={s.ImageGallery}>
       {images.map(({ id, webformatURL, largeImageURL }) => {
@@ -20,9 +20,9 @@ const imageGallery = ({ images, modalImage }) => {
   );
 };
 
-imageGallery.propTypes = {
+ImageGallery.propTypes = {
   images: PropTypes.array.isRequired,
   modalImage: PropTypes.func.isRequired,
 };
 
-export default imageGallery;
+export default ImageGallery;

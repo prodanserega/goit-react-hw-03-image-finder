@@ -26,4 +26,4 @@ async function getFetch(query, page) {
   return data.hits;
 }
 
-export default getFetch;
+export { getFetch };

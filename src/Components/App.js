@@ -3,11 +3,11 @@ import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import getFetch from "../services/Api";
+import { getFetch } from "../services/Api";
 import SearchBar from "../Components/Searchbar/Searchbar";
-import imageGallery from "./ImageGallery/ImageGallery";
+import ImageGallery from "./ImageGallery/ImageGallery";
 //import imageGalleryItem from "./ImageGalleryItem/ImageGalleryItem";
-import LoaderSpiner from "../Components/Spinner/Loader";
+import LoaderSpinner from "../Components/Spinner/Loader";
 import Button from "./button/button";
 import Modal from "./modal/modal";
 
@@ -96,9 +96,11 @@ export default class App extends Component {
         <SearchBar onSubmit={this.handleFormSubmit} />
         {error && <p className={s.Error}>{error}</p>}
         {images && (
-          <imageGallery images={images} modalImage={this.modalImage} />
+          <div>
+            <ImageGallery images={images} modalImage={this.modalImage} />
+          </div>
         )}
-        {isLoading && <LoaderSpiner />}
+        {isLoading && <LoaderSpinner />}
         {showButton && !isLoading && <Button onClick={this.getImages} />}
         {showModal && (
           <Modal onClose={this.toggleModal}>

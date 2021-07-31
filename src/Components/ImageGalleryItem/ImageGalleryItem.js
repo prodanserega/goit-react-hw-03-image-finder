@@ -8,7 +8,7 @@ const ImageGalleryItem = ({ imageSrc, openModalImage }) => {
       <img
         src={imageSrc}
         alt=""
-        className={s["ImageGalleryItem-image"]}
+        className={s.ImageGalleryItemImage}
         onClick={openModalImage}
       />
     </li>
