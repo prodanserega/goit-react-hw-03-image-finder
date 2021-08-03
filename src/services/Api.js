@@ -11,11 +11,11 @@ axios.defaults.params = {
   per_page: 12,
 };
 
-async function getFetch(query, page) {
+async function getFetch(searchQuery, page) {
   const { data } = await axios
     .get("", {
       params: {
-        q: query,
+        q: searchQuery,
         page,
       },
     })

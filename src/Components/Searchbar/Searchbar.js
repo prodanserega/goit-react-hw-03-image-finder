@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import s from "./Searchbar.module.css";
 
@@ -36,8 +36,8 @@ export default class SearchBar extends Component {
           <input
             className={s.SearchForm__input}
             type="text"
-            autocomplete="off"
-            autofocus
+            // autocomplete="off"
+            // autofocus
             placeholder="Search images and photos"
             onChange={this.handleNameChange}
             value={this.state.value}

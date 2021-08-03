@@ -18,9 +18,9 @@ export default class App extends Component {
     images: [],
     searchQuery: "",
     page: 1,
-    largeImageURL: "",
     showModal: false,
     isLoading: false,
+    largeImageURL: "",
     showButton: false,
   };
 
@@ -58,7 +58,7 @@ export default class App extends Component {
           );
           return;
         } else if (images.length <= 12) {
-          this.setState({ showButton: false });
+          this.setState({ showButton: true });
         }
         this.setState((prevState) => ({
           images: [...prevState.images, ...images],
@@ -92,13 +92,11 @@ export default class App extends Component {
       this.state;
     return (
       <div className={s.App}>
-        <ToastContainer autoClose={3000} position="top-left" />
+        <ToastContainer autoClose={3000} position="top-right" />
         <SearchBar onSubmit={this.handleFormSubmit} />
         {error && <p className={s.Error}>{error}</p>}
         {images && (
-          <div>
-            <ImageGallery images={images} modalImage={this.modalImage} />
-          </div>
+          <ImageGallery images={images} modalImage={this.modalImage} />
         )}
         {isLoading && <LoaderSpinner />}
         {showButton && !isLoading && <Button onClick={this.getImages} />}
